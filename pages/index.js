@@ -1,4 +1,5 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import react from 'react';
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -69,7 +70,8 @@ function Title(props) {
    */
  
   export default function PaginaInicial() {
-    const username = 'peas';
+    /* const username = 'O luis henrique'; */
+    const [username, setUsername] = react.useState('henrique-hub-byte');
   
     return (
       <>
@@ -109,8 +111,23 @@ function Title(props) {
               <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
                 {appConfig.name}
               </Text>
-  
+              
+              {/*<input type="text" value={username} onChange={function(event) {
+                console.log('usuario digitou' , event);
+                //onde ta o valor 
+                const valor = event.target.value;
+                //trocar o valor da variavel através do react 
+                setUsername(valor);
+              }} 
+              /> */}
               <TextField
+                value={username}
+                onChange={function(event) {
+                //onde ta o valor 
+                const valor = event.target.value;
+                //trocar o valor da variavel através do react 
+                setUsername(valor);
+                }}  
                 fullWidth
                 textFieldColors={{
                   neutral: {
